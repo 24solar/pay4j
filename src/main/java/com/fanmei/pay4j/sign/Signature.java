@@ -29,31 +29,40 @@ public interface Signature {
     /**
      * 签名
      *
-     * @param obj
-     * @return
+     * @param obj 签名对象
+     * @param charset 字符集
+     * @param encode 是否编码
+     * @return 签名
      */
     String sign(@Nonnull Object obj, @Nonnull Charset charset, boolean encode);
 
     /**
      * UTF-8签名
+     * @param obj 签名对象
+     * @param encode 是否编码
+     * @return UTF-8签名
      */
     String sign(@Nonnull Object obj, boolean encode);
 
     /**
-     * UTF-8签名&不编码
+     * UTF-8签名不编码
+     * @param obj 签名对象
+     * @return 签名
      */
     String sign(@Nonnull Object obj);
 
     /**
-     * UTF-8签名&编码
+     * UTF-8签名编码
+     * @param obj 签名对象
+     * @return 签名
      */
     String signWithEncode(@Nonnull Object obj);
 
     /**
      * 验证签名是否一致
-     * @param obj
-     * @param sign
-     * @return
+     * @param obj 签名对象
+     * @param sign 签名
+     * @return 签名是否一致
      */
     boolean isValidSign(@Nonnull Object obj, @Nonnull String sign);
 }
