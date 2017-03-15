@@ -32,10 +32,10 @@ public class AlipaySignature extends AbstractSignature {
 
     /**
      * alipay专用
-     * @param obj
-     * @param charset
-     * @param encode
-     * @return
+     * @param obj 签名的对象
+     * @param charset 字符集
+     * @param encode 是否编码
+     * @return 签名
      */
     public String signWithQuota(Object obj, Charset charset, boolean encode) {
         StringBuilder sb = join(obj, charset, encode, true);
