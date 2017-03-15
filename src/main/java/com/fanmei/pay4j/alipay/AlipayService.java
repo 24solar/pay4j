@@ -56,8 +56,8 @@ public class AlipayService {
     /**
      * 发起支付宝验证
      *
-     * @param notifyId
-     * @return
+     * @param notifyId notifyId
+     * @return 是否成功
      */
     public boolean isAlipayResponse(@Nonnull String notifyId) throws AlipayException {
         VerifyParam verifyParam = VerifyParam.of(alipayConfig.getPartner(), notifyId);
@@ -68,8 +68,8 @@ public class AlipayService {
     /**
      * 发起退款请求
      *
-     * @param refundParam
-     * @return
+     * @param refundParam 退款参数对象
+     * @return xml结果
      */
     public XmlResult applyRefund(@Nonnull RefundCreateParam refundParam) throws AlipayException {
         declareRequest(refundParam);
@@ -81,9 +81,9 @@ public class AlipayService {
 
     /**
      * 分页查询对账流水
-     * @param queryParam
-     * @return
-     * @throws AlipayException
+     * @param queryParam 查询参数
+     * @return  查询结果
+     * @throws AlipayException 支付宝调用返回的错误
      */
     public StatementResult queryStatementFlowList(@Nonnull StatementQueryParam queryParam) throws AlipayException {
         declareRequest(queryParam);
@@ -95,9 +95,9 @@ public class AlipayService {
 
     /**
      * 查询单个订单信息
-     * @param queryParam
-     * @return
-     * @throws AlipayException
+     * @param queryParam 查询参数
+     * @return 详情
+     * @throws AlipayException 封装支付宝的异常
      */
     public String querySingleOrder(@Nonnull OrderQueryParam queryParam) throws AlipayException {
         declareRequest(queryParam);
@@ -109,6 +109,8 @@ public class AlipayService {
 
     /**
      * 生成客户端支付参数
+     * @param orderBase 订单的信息
+     * @return 返回给客户端的支付宝需要的订单信息
      */
     public OrderCreateParam genOrderCreateParam(@Nonnull OrderBase orderBase) throws AlipayException {
         OrderCreateParam orderCreateParam = OrderCreateParam.create(orderBase, alipayConfig.getSellerMail());
@@ -127,9 +129,9 @@ public class AlipayService {
     /**
      * 对回调对象进行签名验证
      *
-     * @param result
-     * @param <T>
-     * @return
+     * @param result 结果
+     * @param <T> 泛型
+     * @return 签名是否合法
      */
     public <T extends NotifyResult> boolean isValidSign(@Nonnull T result) {
         return alipaySignature.isValidSign(result, result.getSign());
@@ -138,7 +140,7 @@ public class AlipayService {
     /**
      * 设置公共请求参数
      *
-     * @param request
+     * @param request 请求对象
      */
     protected <T extends RequestParam> void declareRequest(T request) {
         request.setPartner(alipayConfig.getPartner());
