@@ -85,6 +85,7 @@ public class RSA {
      * @param private_key   商户私钥
      * @param input_charset 编码格式
      * @return 解密后的字符串
+     * @throws Exception 解密的异常
      */
     public static String decrypt(String content, String private_key, String input_charset) throws Exception {
         PrivateKey prikey = getPrivateKey(private_key);
@@ -119,7 +120,8 @@ public class RSA {
      * 得到私钥
      *
      * @param key 密钥字符串（经过base64编码）
-     * @throws Exception
+     * @throws Exception 抛出的异常
+     * @return 私钥
      */
     public static PrivateKey getPrivateKey(String key) throws Exception {
 
