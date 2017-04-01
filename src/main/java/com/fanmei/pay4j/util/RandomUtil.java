@@ -41,7 +41,7 @@ public class RandomUtil {
 	 * 
 	 * @param length
 	 *            随机数的长度
-	 * @return
+	 * @return 一个定长的随机字符串
 	 */
 	public static String generateString(int length) {
 		StringBuilder sb = new StringBuilder(length);
@@ -57,7 +57,7 @@ public class RandomUtil {
 	 * 
 	 * @param length
 	 *            随机数的长度
-	 * @return
+	 * @return 一个定长的随机字符串
 	 */
 	public static String generateStringByNumberChar(int length) {
 		StringBuilder sb = new StringBuilder(length);
@@ -73,7 +73,7 @@ public class RandomUtil {
 	 * 
 	 * @param length
 	 *            随机数的长度
-	 * @return
+	 * @return 一个定长的随机字符串
 	 */
 	public static String generateStringByLetterCharr(int length) {
 		StringBuilder sb = new StringBuilder(length);
@@ -89,7 +89,7 @@ public class RandomUtil {
 	 * 
 	 * @param length
 	 *            随机数的长度
-	 * @return
+	 * @return 一个定长的随机字符串
 	 */
 	public static String generateLowerString(int length) {
 		return generateStringByLetterCharr(length).toLowerCase();
@@ -100,7 +100,7 @@ public class RandomUtil {
 	 * 
 	 * @param length
 	 *            随机数的长度
-	 * @return
+	 * @return 一个定长的随机字符串
 	 */
 	public static String generateUpperString(int length) {
 		return generateStringByLetterCharr(length).toUpperCase();
