@@ -108,6 +108,7 @@ public interface RequestExecutor {
      * 无参get请求
      *
      * @param url url
+     * @param charset charset
      * @return FanmeiResponse
      * @throws RequestException 请求异常
      */
@@ -152,6 +153,7 @@ public interface RequestExecutor {
      *
      * @param url url
      * @param body body
+     * @param charset charset
      * @return FanmeiResponse
      * @throws RequestException 请求异常
      */
@@ -162,6 +164,7 @@ public interface RequestExecutor {
      *
      * @param url url
      * @param parameters 参数
+     * @param charset charset
      * @return FanmeiResponse
      * @throws RequestException 请求异常
      */
@@ -173,6 +176,7 @@ public interface RequestExecutor {
      *
      * @param url url
      * @param params 参数
+     * @param charset charset
      * @return FanmeiResponse
      * @throws RequestException 请求异常
      */
