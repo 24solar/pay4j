@@ -164,7 +164,7 @@ public class OrderDetailParam extends CommonResult {
     }
 
     /**
-     * <span styole="color:red">单位为元,自动格式化为分</span>
+     * <span style="color:red">单位为元,自动格式化为分</span>
      *
      * @param totalFee 订单总额 单位为元
      */

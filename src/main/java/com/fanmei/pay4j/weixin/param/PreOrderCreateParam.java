@@ -146,16 +146,16 @@ public class PreOrderCreateParam extends OrderDetailParam {
     /**
      * 完整参数
      *
-     * @param body       商品描述 <span stype="color:red">必填项</span>
+     * @param body       商品描述 <span style="color:red">必填项</span>
      * @param detail     商品名称明细列表 非必填项
-     * @param outTradeNo 商户内部唯一订单号 <span stype="color:red">必填项</span>
-     * @param totalFee   商品总额 单位元 <span stype="color:red">必填项</span>
-     * @param notifyUrl  支付回调URL <span stype="color:red">必填项</span>
-     * @param createIp   订单生成的机器IP <span stype="color:red">必填项</span>
-     * @param tradeType  交易类型 <span stype="color:red">必填项</span>
-     * @param openId     用户ID <span stype="color:red">tradeType=JSAPI时必填</span>
-     * @param authCode   刷卡支付授权码 <span stype="color:red">tradeType=MICROPAY时必填</span>
-     * @param productId  产品ID <span stype="color:red">tradeType=NATIVE时必填</span>
+     * @param outTradeNo 商户内部唯一订单号 <span style="color:red">必填项</span>
+     * @param totalFee   商品总额 单位元 <span style="color:red">必填项</span>
+     * @param notifyUrl  支付回调URL <span style="color:red">必填项</span>
+     * @param createIp   订单生成的机器IP <span style="color:red">必填项</span>
+     * @param tradeType  交易类型 <span style="color:red">必填项</span>
+     * @param openId     用户ID <span style="color:red">tradeType=JSAPI时必填</span>
+     * @param authCode   刷卡支付授权码 <span style="color:red">tradeType=MICROPAY时必填</span>
+     * @param productId  产品ID <span style="color:red">tradeType=NATIVE时必填</span>
      * @param attach     附加数据，在查询API和支付通知中原样返回，该字段主要用于商户携带订单的自定义数据 非必填项
      * @param timeStart  订单生成时间，格式为yyyyMMddHHmmss 非必填项
      * @param timeExpire 订单失效时间，格式为yyyyMMddHHmmss;注意：最短失效时间间隔必须大于5分钟 非必填项
@@ -193,7 +193,7 @@ public class PreOrderCreateParam extends OrderDetailParam {
     /**
      * 刷卡支付
      *
-     * @return
+     * @return boolean
      */
     @JSONField(serialize = false)
     public boolean isMicroPay() {
