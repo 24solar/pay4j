@@ -81,9 +81,9 @@ public class WeixinPayProxy {
      * </P>
      *
      * @param orderParam 商户系统内部的订单号, transaction_id、out_trade_no 二 选一,如果同时存在优先级:
-     *                   transaction_id> out_trade_no
+     *                   transaction_id &gt; out_trade_no
      * @return 订单详情
-     * @throws WeixinException
+     * @throws WeixinException 自定义的微信异常类
      * @see Order
      * @see PayService
      * @see <a href=
@@ -96,7 +96,7 @@ public class WeixinPayProxy {
     }
 
     /**
-     * 申请退款(请求需要双向证书)<br/>
+     * 申请退款(请求需要双向证书)<br>
      * <p>
      * 当交易发生之后一段时间内，由于买家或者卖家的原因需要退款时，卖家可以通过退款接口将支付款退还给买家，微信支付将在收到退款请求并且验证成功之后，
      * 按照退款规则将支付款按原路退到买家帐号上。
@@ -107,8 +107,9 @@ public class WeixinPayProxy {
      * ，要采用原来的退款单号。总退款金额不能超过用户实际支付金额。
      * </p>
      *
+     * @param refundCreateParam 退款的参数对象
      * @return 退款申请结果
-     * @throws WeixinException
+     * @throws WeixinException 自定义的微信异常类
      * @see RefundRequestResult
      * @see PayService
      * @see <a href=
@@ -128,9 +129,9 @@ public class WeixinPayProxy {
      *
      * @param queryParam 单号 refund_id、out_refund_no、 out_trade_no 、 transaction_id
      *                   四个参数必填一个,优先级为:
-     *                   refund_id>out_refund_no>transaction_id>out_trade_no
+     *                   refund_id &gt; out_refund_no &gt; transaction_id &gt; out_trade_no
      * @return 退款记录
-     * @throws WeixinException
+     * @throws WeixinException WeixinException
      * @see PayService
      * @see RefundRecord
      * @see <a href=
@@ -156,6 +157,7 @@ public class WeixinPayProxy {
      * @see <a href=
      * "http://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_6">
      * 下载对账单API</a>
+     * @return FanmeiResponse
      */
     public FanmeiResponse fetchBill(@Nonnull Date billDate, @Nullable BillType billType)
             throws WeixinException {
@@ -172,6 +174,7 @@ public class WeixinPayProxy {
      * @see <a href=
      * "http://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_6">
      * 下载对账单API</a>
+     * @return FanmeiResponse
      */
     public FanmeiResponse fetchBill(@Nonnull String billDate, @Nullable BillType billType)
             throws WeixinException {
@@ -179,13 +182,13 @@ public class WeixinPayProxy {
     }
 
     /**
-     * 冲正订单(需要证书)<br/> 当支付返回失败,或收银系统超时需要取消交易,可以调用该接口<br/> 接口逻辑:支
-     * 付失败的关单,支付成功的撤销支付<br/> <font color="red">7天以内的单可撤销,其他正常支付的单
-     * 如需实现相同功能请调用退款接口</font><br/> <font
-     * color="red">调用扣款接口后请勿立即调用撤销,需要等待5秒以上。先调用查单接口,如果没有确切的返回,再调用撤销</font> <br/>
+     * 冲正订单(需要证书)<br> 当支付返回失败,或收银系统超时需要取消交易,可以调用该接口<br> 接口逻辑:支
+     * 付失败的关单,支付成功的撤销支付<br> <span style="color:red">7天以内的单可撤销,其他正常支付的单
+     * 如需实现相同功能请调用退款接口</span><br> <span style="color:red">
+     * 调用扣款接口后请勿立即调用撤销,需要等待5秒以上。先调用查单接口,如果没有确切的返回,再调用撤销</span> <br>
      *
      * @param orderParam 商户系统内部的订单号, transaction_id 、 out_trade_no 二选一,如果同时存在优先级:
-     *                   transaction_id> out_trade_no
+     *                   transaction_id &gt; out_trade_no
      * @return 撤销结果
      * @see PayService
      */
@@ -202,7 +205,7 @@ public class WeixinPayProxy {
      *
      * @param outTradeNo 商户系统内部的订单号
      * @return 执行结果
-     * @throws WeixinException
+     * @throws WeixinException WeixinException
      * @see PayService
      * @see <a href=
      * "http://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_3">
@@ -219,7 +222,7 @@ public class WeixinPayProxy {
      *
      * @param url 具有native标识的支付URL
      * @return 转换后的短链接
-     * @throws WeixinException
+     * @throws WeixinException WeixinException
      * @see PayService
      * @see <a href=
      * "http://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_9">
@@ -232,10 +235,9 @@ public class WeixinPayProxy {
 
     /**
      * 对回调对象进行签名验证
-     *
-     * @param result
-     * @param <T>
-     * @return
+     * @param result 对象
+     * @param <T> 对象
+     * @return 验证的结果
      */
     public <T extends CommonResult> boolean isValidSign(@Nonnull T result) {
         return payService.isValidSign(result);
@@ -243,6 +245,8 @@ public class WeixinPayProxy {
 
     /**
      * 生成客户端支付参数
+     * @param prePayId 参数
+     * @return OrderPayParam
      */
     public OrderPayParam genOrderPayParam(@Nonnull String prePayId) throws WeixinException {
         return payService.genOrderPayParam(prePayId);
