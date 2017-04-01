@@ -31,7 +31,6 @@ import java.io.Serializable;
 /**
  * 微信返回基本参数类
  *
- * @className XmlResult
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
