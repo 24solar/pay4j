@@ -51,7 +51,7 @@ public class PayService extends AbstractService {
     }
 
     /**
-     * 统一下单接口</br>
+     * 统一下单接口<br>
      * 除被扫支付场景以外，商户系统先调用该接口在微信支付服务后台生成预支付交易单，返回正确的预支付交易回话标识后再按扫码、JSAPI
      * 、APP等不同场景生成交易串调起支付。
      *
@@ -74,8 +74,8 @@ public class PayService extends AbstractService {
     /**
      * 订单查询
      * <p>
-     * 当商户后台、网络、服务器等出现异常，商户系统最终未接收到支付通知；</br> 调用支付接口后，返回系统错误或未知交易状态情况；</br>
-     * 调用被扫支付API，返回USERPAYING的状态；</br> 调用关单或撤销接口API之前，需确认支付状态；
+     * 当商户后台、网络、服务器等出现异常，商户系统最终未接收到支付通知；<br> 调用支付接口后，返回系统错误或未知交易状态情况；<br>
+     * 调用被扫支付API，返回USERPAYING的状态；<br> 调用关单或撤销接口API之前，需确认支付状态；
      * </P>
      *
      * @param queryParam 商户系统内部的订单号, transaction_id、out_trade_no 二 选一,如果同时存在优先级:
@@ -126,10 +126,10 @@ public class PayService extends AbstractService {
     }
 
     /**
-     * 冲正订单(需要证书)</br> 当支付返回失败,或收银系统超时需要取消交易,可以调用该接口</br> 接口逻辑:支
-     * 付失败的关单,支付成功的撤销支付</br> <font color="red">7天以内的单可撤销,其他正常支付的单
-     * 如需实现相同功能请调用退款接口</font></br> <font
-     * color="red">调用扣款接口后请勿立即调用撤销,需要等待5秒以上。先调用查单接口,如果没有确切的返回,再调用撤销</font> </br>
+     * 冲正订单(需要证书)<br> 当支付返回失败,或收银系统超时需要取消交易,可以调用该接口<br> 接口逻辑:支
+     * 付失败的关单,支付成功的撤销支付<br> <span style="color:red">7天以内的单可撤销,其他正常支付的单
+     * 如需实现相同功能请调用退款接口</span><br> <span style="color:red">
+     * 调用扣款接口后请勿立即调用撤销,需要等待5秒以上。先调用查单接口,如果没有确切的返回,再调用撤销</span> <br>
      *
      * @param orderParam 商户系统内部的订单号, transaction_id 、 out_trade_no 二选一,如果同时存在优先级:
      *                   transaction_id> out_trade_no
