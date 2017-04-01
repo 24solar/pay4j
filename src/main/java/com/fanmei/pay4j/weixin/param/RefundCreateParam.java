@@ -92,16 +92,8 @@ public class RefundCreateParam extends CommonResult {
 
     }
 
-    /**
+    /*
      * 商户订单号的退款参数
-     *
-     * @param outTradeNo
-     * @param outRefundNo
-     * @param totalFee
-     * @param refundFee
-     * @param opUserId
-     * @param refundFeeType
-     * @return
      */
     public static RefundCreateParam createWithOutTradeNo(@Nonnull String outTradeNo, @Nonnull String outRefundNo
             , long totalFee, long refundFee, @Nonnull String opUserId, @Nonnull CurrencyType refundFeeType) {
@@ -120,16 +112,9 @@ public class RefundCreateParam extends CommonResult {
         return refundCreateParam;
     }
 
-    /**
+    /*
      * 微信订单号的退款参数
      *
-     * @param transactionId
-     * @param outRefundNo
-     * @param totalFee
-     * @param refundFee
-     * @param opUserId
-     * @param refundFeeType
-     * @return
      */
     public static RefundCreateParam createWithTransactionId(@Nonnull String transactionId, @Nonnull String outRefundNo
             , long totalFee, long refundFee, @Nonnull String opUserId, @Nonnull CurrencyType refundFeeType) {

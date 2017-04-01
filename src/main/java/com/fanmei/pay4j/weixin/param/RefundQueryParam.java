@@ -65,41 +65,29 @@ public class RefundQueryParam extends CommonResult {
 
     }
 
-    /**
+    /*
      * 商户订单号的退款参数
-     *
-     * @param outTradeNo
-     * @return
      */
     public static RefundQueryParam createWithOutTradeNo(@Nonnull String outTradeNo) {
         return new RefundQueryParam(outTradeNo, null, null, null);
     }
 
-    /**
+    /*
      * 微信订单号的退款参数
-     *
-     * @param transactionId
-     * @return
      */
     public static RefundQueryParam createWithTransactionId(@Nonnull String transactionId) {
         return new RefundQueryParam(null, transactionId, null, null);
     }
 
-    /**
+    /*
      * 微信订单号的退款参数
-     *
-     * @param outRefundNo
-     * @return
      */
     public static RefundQueryParam createWithOutRefundNo(@Nonnull String outRefundNo) {
         return new RefundQueryParam(null, null, outRefundNo, null);
     }
 
-    /**
+    /*
      * 微信订单号的退款参数
-     *
-     * @param refundId
-     * @return
      */
     public static RefundQueryParam createWithRefundId(@Nonnull String refundId) {
         return new RefundQueryParam(null, null, null, refundId);
