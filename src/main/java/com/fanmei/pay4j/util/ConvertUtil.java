@@ -33,25 +33,11 @@ import java.util.Map;
  */
 public class ConvertUtil {
 
-    /**
-     * 将对象转换成map
-     *
-     * @param object
-     * @return
-     */
     public static Map<String, String> convert2Map(@Nonnull Object object) {
         String text = JSON.toJSONString(object);
         return JSON.parseObject(text, Map.class);
     }
 
-    /**
-     * 将map转换成对象
-     *
-     * @param map
-     * @param typeReference
-     * @param <T>
-     * @return
-     */
     public static <T> T convert2Object(@Nonnull Map<String, String> map, @Nonnull TypeReference<T> typeReference) {
         Class<T> clazz = (Class<T>) typeReference.getType();
         String json = JSON.toJSONString(map);
@@ -59,10 +45,6 @@ public class ConvertUtil {
         return result;
     }
 
-    /**
-     * @param sourceMap
-     * @return
-     */
     public static Map<String, String> convert2Map(@Nonnull Map<String, String[]> sourceMap) {
         Map<String, String> params = Maps.newHashMap();
         for (Map.Entry<String, String[]> entry : sourceMap.entrySet()) {
@@ -76,12 +58,6 @@ public class ConvertUtil {
         return params;
     }
 
-    /**
-     * @param map
-     * @param typeReference
-     * @param <T>
-     * @return
-     */
     public static <T> T convert2Obj(@Nonnull Map<String, String[]> map, @Nonnull TypeReference<T> typeReference) {
         return convert2Object(convert2Map(map), typeReference);
     }
