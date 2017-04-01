@@ -24,11 +24,9 @@ import java.util.UUID;
 /**
  * 随机码工具类
  * 
- * @className RandomUtil
  * @author jinyu(foxinmy@gmail.com)
  * @date 2014年10月22日
  * @since JDK 1.6
- * @see
  */
 public class RandomUtil {
 
