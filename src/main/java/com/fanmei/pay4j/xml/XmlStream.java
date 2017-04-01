@@ -227,7 +227,7 @@ public final class XmlStream {
     /**
      * Bean2Xml
      *
-     * @param <T>  bean对象
+     * @param t  bean对象
      * @param os 输出流
      */
     public static <T> void toXML(T t, OutputStream os) {

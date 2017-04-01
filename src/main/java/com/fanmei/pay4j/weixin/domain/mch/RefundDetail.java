@@ -88,7 +88,7 @@ public class RefundDetail extends CommonResult {
     @JSONField(name = "refund_status")
     private String refundStatus;
     /**
-     * 现金券退款金额&lg;=退款金额,退款金额-现金券退款金额为现金
+     * 现金券退款金额&lt;=退款金额,退款金额-现金券退款金额为现金
      */
     @XmlElement(name = "coupon_refund_fee")
     @JSONField(name = "coupon_refund_fee")

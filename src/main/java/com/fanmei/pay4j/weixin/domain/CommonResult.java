@@ -60,7 +60,7 @@ public class CommonResult extends XmlResult {
     @JSONField(name = "nonce_str")
     private String nonceStr;
     /**
-     * 签名 <span styple="color:red">调用者无需关心</span>
+     * 签名 <span style="color:red">调用者无需关心</span>
      */
     private String sign;
     /**
