@@ -197,7 +197,7 @@ public class Order extends CommonResult {
     }
 
     /**
-     * <font color="red">调用接口获取单位为分,get方法转换为元方便使用</font>
+     * <span style="color:red">调用接口获取单位为分,get方法转换为元方便使用</span>
      *
      * @return 元单位
      */
@@ -211,7 +211,7 @@ public class Order extends CommonResult {
     }
 
     /**
-     * <font color="red">调用接口获取单位为分,get方法转换为元方便使用</font>
+     * <span style="color:red">调用接口获取单位为分,get方法转换为元方便使用</span>
      *
      * @return 元单位
      */
@@ -229,7 +229,7 @@ public class Order extends CommonResult {
     }
 
     /**
-     * <font color="red">调用接口获取单位为分,get方法转换为元方便使用</font>
+     * <span style="color:red">调用接口获取单位为分,get方法转换为元方便使用</span>
      *
      * @return 元单位
      */
