@@ -229,6 +229,7 @@ public final class XmlStream {
      *
      * @param t  bean对象
      * @param os 输出流
+     * @param <T>  bean类型
      */
     public static <T> void toXML(T t, OutputStream os) {
         Class<T> clazz = (Class<T>) t.getClass();
