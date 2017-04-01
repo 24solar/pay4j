@@ -111,6 +111,7 @@ public final class StringUtil {
      *
      * @param object  对象
      * @param charset 字符集
+     * @param withQuota 是否加引号
      * @param encode  是否编码
      * @return str
      */
@@ -138,6 +139,7 @@ public final class StringUtil {
      * @param map     对象
      * @param charset 字符集
      * @param encode  是否编码
+     * @param withQuota 是否加引号
      * @return str
      */
     public static String toJoinForSign(Map<String, String> map, Charset charset, boolean encode, boolean withQuota) {
