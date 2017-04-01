@@ -28,8 +28,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 /**
  * 调用商户平台接口返回的公用字段
  *
- * @className CommonResult
- * @see
  */
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
