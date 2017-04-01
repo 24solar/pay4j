@@ -100,7 +100,7 @@ public final class StringUtil {
      * @param object  对象
      * @param charset 字符集
      * @param encode  是否编码
-     * @return
+     * @return 连接后的str
      */
     public static String toJoinForSign(Object object, Charset charset, boolean encode) {
         return toJoinForSign(object, charset, encode, false);
@@ -112,7 +112,7 @@ public final class StringUtil {
      * @param object  对象
      * @param charset 字符集
      * @param encode  是否编码
-     * @return
+     * @return str
      */
     public static String toJoinForSign(Object object, Charset charset, boolean encode, boolean withQuota) {
         Map<String, String> map = new HashMap<String, String>();
@@ -138,7 +138,7 @@ public final class StringUtil {
      * @param map     对象
      * @param charset 字符集
      * @param encode  是否编码
-     * @return
+     * @return str
      */
     public static String toJoinForSign(Map<String, String> map, Charset charset, boolean encode, boolean withQuota) {
         map.remove("sign");
@@ -175,7 +175,7 @@ public final class StringUtil {
      *
      * @param object    对象
      * @param withQuota 是否加引号
-     * @return
+     * @return str
      */
     public static String toJoinString(Object object, boolean withQuota) {
         Map<String, String> map = new HashMap<String, String>();
