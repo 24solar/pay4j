@@ -76,6 +76,7 @@ public class WeixinPayAccount extends WeixinAccount {
      * @param id         公众号唯一的身份ID(必填)
      * @param paySignKey 支付密钥字符串(必填)
      * @param mchId      微信支付分配的商户号(必填)
+     * @param certificateKey 证书
      */
     public WeixinPayAccount(String id, String paySignKey, String mchId, String certificateKey) {
         this(id, null, paySignKey, mchId, certificateKey, null, null, null, null);
