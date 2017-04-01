@@ -52,7 +52,7 @@ public enum TradeType {
     /**
      * 是否作为支付请求参数
      *
-     * @return
+     * @return boolean
      */
     public boolean isPayRequestParameter() {
         return isPayRequestParameter;

@@ -41,11 +41,8 @@ import java.util.Map;
  */
 public class ListSuffixResultSerializer {
 
-    /**
+    /*
      * 序列化为json
-     *
-     * @param object
-     * @return json
      */
     public static JSONObject serializeToJSON(Object object) {
         JSONObject result = (JSONObject) JSON.toJSON(object);
@@ -75,11 +72,8 @@ public class ListSuffixResultSerializer {
         return result;
     }
 
-    /**
+    /*
      * list对象转换为map的$n形式
-     *
-     * @param listsuffix
-     * @return
      */
     public static Map<String, String> listSuffixConvertMap(List<?> listsuffix) {
         Map<String, String> listMap = new HashMap<String, String>();
@@ -107,11 +101,9 @@ public class ListSuffixResultSerializer {
         }
     }
 
-    /**
+    /*
      * 序列化为xml
      *
-     * @param object
-     * @return xml
      */
     public static String serializeToXML(Object object) {
         JSONObject obj = serializeToJSON(object);

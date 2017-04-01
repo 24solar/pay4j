@@ -69,8 +69,9 @@ public class ListSuffixResultDeserializer {
      * 对包含$n节点的xml反序列化
      *
      * @param content xml内容
-     * @param clazz
-     * @return
+     * @param clazz 目标类型
+     * @param <T> 泛型
+     * @return 目标对象
      */
     public static <T> T deserialize(String content, Class<T> clazz) {
         T t = XmlStream.fromXML(content, clazz);
