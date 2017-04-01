@@ -79,9 +79,9 @@ public class PayService extends AbstractService {
      * </P>
      *
      * @param queryParam 商户系统内部的订单号, transaction_id、out_trade_no 二 选一,如果同时存在优先级:
-     *                   transaction_id> out_trade_no
+     *                   transaction_id &gmt; out_trade_no
      * @return 订单信息
-     * @throws WeixinException
+     * @throws WeixinException WeixinException
      * @see Order
      * @see <a href=
      * "http://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_2">
@@ -109,8 +109,9 @@ public class PayService extends AbstractService {
      * ，要采用原来的退款单号。总退款金额不能超过用户实际支付金额。
      * </p>
      *
+     * @param refundCreateParam RefundCreateParam
      * @return 退款申请结果
-     * @throws WeixinException
+     * @throws WeixinException WeixinException
      * @see RefundRequestResult
      * @see <a href=
      * "http://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_4">
@@ -132,9 +133,9 @@ public class PayService extends AbstractService {
      * 调用扣款接口后请勿立即调用撤销,需要等待5秒以上。先调用查单接口,如果没有确切的返回,再调用撤销</span> <br>
      *
      * @param orderParam 商户系统内部的订单号, transaction_id 、 out_trade_no 二选一,如果同时存在优先级:
-     *                   transaction_id> out_trade_no
+     *                   transaction_id &gt; out_trade_no
      * @return 撤销结果
-     * @throws WeixinException
+     * @throws WeixinException WeixinException
      * @since V3
      */
     public CommonResult reverseOrder(@Nonnull OrderParam orderParam) throws WeixinException {
@@ -151,7 +152,7 @@ public class PayService extends AbstractService {
      *
      * @param urlParam 具有native标识的支付URL
      * @return 转换后的短链接
-     * @throws WeixinException
+     * @throws WeixinException WeixinException
      * @see <a href=
      * "http://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_9">
      * 转换短链接API</a>
@@ -174,7 +175,7 @@ public class PayService extends AbstractService {
      *
      * @param outTradeNo 商户系统内部的订单号
      * @return 处理结果
-     * @throws WeixinException
+     * @throws WeixinException WeixinException
      * @see <a href=
      * "http://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_3">
      * 关闭订单</a>
@@ -195,6 +196,8 @@ public class PayService extends AbstractService {
      * 2.微信在次日 9 点启动生成前一天的对账单,建议商户 9 点半后再获取;<br>
      * 3.对账单中涉及金额的字段单位为“元”。<br>
      *
+     * @param billParam BillParam
+     * @return FanmeiResponse
      * @see <a href=
      * "http://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_6">
      * 下载对账单</a>
@@ -211,15 +214,14 @@ public class PayService extends AbstractService {
     /**
      * 退款查询
      * <p>
-     * <p>
      * 提交退款申请后，通过调用该接口查询退款状态。退款有一定延时，用零钱支付的退款20分钟内到账，银行卡支付的退款3个工作日后重新查询退款状态。
      * </p>
      *
      * @param queryParam 单号 refund_id、out_refund_no、out_trade_no、transaction_id
      *                   四个参数必填一个,优先级为:
-     *                   refund_id>out_refund_no>transaction_id>out_trade_no
+     *                   refund_id &gt; out_refund_no &gt; transaction_id &gt; out_trade_no
      * @return 退款记录
-     * @throws WeixinException
+     * @throws WeixinException WeixinException
      * @see <a href=
      * "http://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_5">
      * 退款查询API</a>
@@ -233,18 +235,14 @@ public class PayService extends AbstractService {
                 RefundRecord.class);
     }
 
-    /**
+    /*
      * 对回调对象进行签名验证
-     *
-     * @param result
-     * @param <T>
-     * @return
      */
     public <T extends CommonResult> boolean isValidSign(@Nonnull T result) {
         return weixinSignature.isValidSign(result, result.getSign());
     }
 
-    /**
+    /*
      * 生成客户端支付参数
      */
     public OrderPayParam genOrderPayParam(@Nonnull String prePayId) throws WeixinException {
