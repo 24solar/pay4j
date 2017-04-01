@@ -83,7 +83,7 @@ public class Order extends CommonResult {
     @JSONField(name = "total_fee")
     private Integer totalFee;
     /**
-     * 现金券支付金额<=订单总金 额,订单总金额-现金券金额 为现金支付金额
+     * 现金券支付金额&lg;=订单总金 额,订单总金额-现金券金额 为现金支付金额
      */
     @XmlElement(name = "coupon_fee")
     @JSONField(name = "coupon_fee")

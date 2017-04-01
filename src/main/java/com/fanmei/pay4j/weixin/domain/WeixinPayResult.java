@@ -80,7 +80,7 @@ public class WeixinPayResult extends CommonResult {
     @JSONField(name = "settlement_total_fee")
     private Integer settlementTotalFee;
     /**
-     * 现金券支付金额<=订单总金 额,订单总金额-现金券金额 为现金支付金额
+     * 现金券支付金额&lt;=订单总金 额,订单总金额-现金券金额 为现金支付金额
      */
     @XmlElement(name = "coupon_fee")
     @JSONField(name = "coupon_fee")

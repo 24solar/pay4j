@@ -88,15 +88,15 @@ public class RefundDetail extends CommonResult {
     @JSONField(name = "refund_status")
     private String refundStatus;
     /**
-     * 现金券退款金额<=退款金额,退款金额-现金券退款金额为现金
+     * 现金券退款金额&lg;=退款金额,退款金额-现金券退款金额为现金
      */
     @XmlElement(name = "coupon_refund_fee")
     @JSONField(name = "coupon_refund_fee")
     private Integer couponRefundFee;
     /**
-     * 代金券或立减优惠使用数量 <font
-     * color="red">微信支付文档上写的coupon_count,而实际测试拿到的是coupon_refund_count,做个记号。
-     * </font>
+     * 代金券或立减优惠使用数量 <span style="color:red">
+     * 微信支付文档上写的coupon_count,而实际测试拿到的是coupon_refund_count,做个记号。
+     * </span>
      */
     @XmlElement(name = "coupon_refund_count")
     @JSONField(name = "coupon_refund_count")

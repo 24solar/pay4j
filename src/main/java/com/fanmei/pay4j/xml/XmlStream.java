@@ -53,7 +53,8 @@ public final class XmlStream {
      *
      * @param content xml内容
      * @param clazz   bean类型
-     * @return
+     * @param <T> bean类型
+     * @return T
      */
     @SuppressWarnings("unchecked")
     public static <T> T fromXML(InputStream content, Class<T> clazz) {
@@ -95,7 +96,8 @@ public final class XmlStream {
      *
      * @param content xml内容
      * @param clazz   bean类型
-     * @return
+     * @param <T> 返回类型
+     * @return T
      */
     public static <T> T fromXML(String content, Class<T> clazz) {
         return fromXML(new ByteArrayInputStream(content.getBytes(Constants.UTF_8)), clazz);
@@ -225,7 +227,7 @@ public final class XmlStream {
     /**
      * Bean2Xml
      *
-     * @param t  bean对象
+     * @param <T>  bean对象
      * @param os 输出流
      */
     public static <T> void toXML(T t, OutputStream os) {
