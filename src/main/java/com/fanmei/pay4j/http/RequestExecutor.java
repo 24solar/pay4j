@@ -35,19 +35,19 @@ public interface RequestExecutor {
     /**
      * 无参get请求,默认编码UTF8
      *
-     * @param url
-     * @return
-     * @throws RequestException
+     * @param url url
+     * @return FanmeiResponse FanmeiResponse
+     * @throws RequestException 请求异常
      */
     FanmeiResponse get(String url) throws RequestException;
 
     /**
      * 有参get请求,默认编码UTF8
      *
-     * @param url
-     * @param parameters
-     * @return
-     * @throws RequestException
+     * @param url url
+     * @param parameters get参数
+     * @return FanmeiResponse FanmeiResponse
+     * @throws RequestException 请求异常
      */
     FanmeiResponse get(String url, Map<String, String> parameters)
             throws RequestException;
@@ -55,10 +55,10 @@ public interface RequestExecutor {
     /**
      * 有参get请求,默认编码UTF8
      *
-     * @param url
-     * @param params
-     * @return
-     * @throws RequestException
+     * @param url url
+     * @param params get参数
+     * @return FanmeiResponse
+     * @throws RequestException 请求异常
      */
     FanmeiResponse get(String url, List<NameValuePair> params)
             throws RequestException;
@@ -66,29 +66,29 @@ public interface RequestExecutor {
     /**
      * 无参post,默认编码UTF8
      *
-     * @param url
-     * @return
-     * @throws RequestException
+     * @param url url
+     * @return FanmeiResponse
+     * @throws RequestException 请求异常
      */
     FanmeiResponse post(String url) throws RequestException;
 
     /**
      * 有参post请求,默认编码UTF8
      *
-     * @param url
-     * @param body
-     * @return
-     * @throws RequestException
+     * @param url url
+     * @param body post body
+     * @return FanmeiResponse
+     * @throws RequestException 请求异常
      */
     FanmeiResponse post(String url, String body) throws RequestException;
 
     /**
      * 有参post请求,默认编码UTF8
      *
-     * @param url
-     * @param parameters
-     * @return
-     * @throws RequestException
+     * @param url url
+     * @param parameters post参数
+     * @return FanmeiResponse
+     * @throws RequestException 请求异常
      */
     FanmeiResponse post(String url, Map<String, String> parameters)
             throws RequestException;
@@ -96,10 +96,10 @@ public interface RequestExecutor {
     /**
      * 有参post请求,默认编码UTF8
      *
-     * @param url
-     * @param params
-     * @return
-     * @throws RequestException
+     * @param url url
+     * @param params post参数
+     * @return FanmeiResponse
+     * @throws RequestException 请求异常
      */
     FanmeiResponse post(String url, List<NameValuePair> params)
             throws RequestException;
@@ -107,19 +107,20 @@ public interface RequestExecutor {
     /**
      * 无参get请求
      *
-     * @param url
-     * @return
-     * @throws RequestException
+     * @param url url
+     * @return FanmeiResponse
+     * @throws RequestException 请求异常
      */
     FanmeiResponse get(String url, Charset charset) throws RequestException;
 
     /**
      * 有参get请求
      *
-     * @param url
-     * @param parameters
-     * @return
-     * @throws RequestException
+     * @param url url
+     * @param parameters get参数
+     * @param charset charset
+     * @return FanmeiResponse
+     * @throws RequestException 请求异常
      */
     FanmeiResponse get(String url, Map<String, String> parameters, Charset charset)
             throws RequestException;
@@ -127,10 +128,11 @@ public interface RequestExecutor {
     /**
      * 有参get请求
      *
-     * @param url
-     * @param params
-     * @return
-     * @throws RequestException
+     * @param url url
+     * @param params get参数
+     * @param charset charset
+     * @return FanmeiResponse
+     * @throws RequestException 请求异常
      */
     FanmeiResponse get(String url, List<NameValuePair> params, Charset charset)
             throws RequestException;
@@ -138,29 +140,30 @@ public interface RequestExecutor {
     /**
      * 无参post
      *
-     * @param url
-     * @return
-     * @throws RequestException
+     * @param url url
+     * @param charset charset
+     * @return FanmeiResponse
+     * @throws RequestException 请求异常
      */
     FanmeiResponse post(String url, Charset charset) throws RequestException;
 
     /**
      * 有参post请求
      *
-     * @param url
-     * @param body
-     * @return
-     * @throws RequestException
+     * @param url url
+     * @param body body
+     * @return FanmeiResponse
+     * @throws RequestException 请求异常
      */
     FanmeiResponse post(String url, String body, Charset charset) throws RequestException;
 
     /**
      * 有参post请求
      *
-     * @param url
-     * @param parameters
-     * @return
-     * @throws RequestException
+     * @param url url
+     * @param parameters 参数
+     * @return FanmeiResponse
+     * @throws RequestException 请求异常
      */
     FanmeiResponse post(String url, Map<String, String> parameters, Charset charset)
             throws RequestException;
@@ -168,10 +171,10 @@ public interface RequestExecutor {
     /**
      * 有参post请求
      *
-     * @param url
-     * @param params
-     * @return
-     * @throws RequestException
+     * @param url url
+     * @param params 参数
+     * @return FanmeiResponse
+     * @throws RequestException 请求异常
      */
     FanmeiResponse post(String url, List<NameValuePair> params, Charset charset)
             throws RequestException;
