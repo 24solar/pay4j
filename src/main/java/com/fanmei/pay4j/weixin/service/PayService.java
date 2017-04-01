@@ -79,7 +79,7 @@ public class PayService extends AbstractService {
      * </P>
      *
      * @param queryParam 商户系统内部的订单号, transaction_id、out_trade_no 二 选一,如果同时存在优先级:
-     *                   transaction_id &gmt; out_trade_no
+     *                   transaction_id &gt; out_trade_no
      * @return 订单信息
      * @throws WeixinException WeixinException
      * @see Order
