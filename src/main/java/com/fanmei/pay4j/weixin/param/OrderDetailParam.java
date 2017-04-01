@@ -110,7 +110,7 @@ public class OrderDetailParam extends CommonResult {
      * @param body       订单描述 必填
      * @param detail     订单详情 非必填
      * @param outTradeNo 商户内部ID 必填
-     * @param totalFee   订单总额 必填 <font color="red">单位为元</font>
+     * @param totalFee   订单总额 必填 <span style="color:red">单位为元</span>
      * @param notifyUrl  回调地址 必填
      * @param createIp   生成订单数据的机器IP 必填
      * @param attach     附加数据 非必填
@@ -164,7 +164,7 @@ public class OrderDetailParam extends CommonResult {
     }
 
     /**
-     * <font color="red">单位为元,自动格式化为分</font>
+     * <span styole="color:red">单位为元,自动格式化为分</span>
      *
      * @param totalFee 订单总额 单位为元
      */
