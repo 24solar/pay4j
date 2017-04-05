@@ -20,7 +20,6 @@ package com.fanmei.pay4j.weixin.service;
 
 
 import com.fanmei.pay4j.http.RequestExecutor;
-import com.fanmei.pay4j.http.WeixinSSLRequestExecutor;
 import com.fanmei.pay4j.sign.Signature;
 import com.fanmei.pay4j.util.RandomUtil;
 import com.fanmei.pay4j.weixin.config.WeixinConfig;
@@ -39,9 +38,9 @@ public class AbstractService extends BaseService {
 
     protected final WeixinPayAccount weixinAccount;
     protected final Signature weixinSignature;
-    protected WeixinSSLRequestExecutor weixinSslRequestExecutor;
+    protected RequestExecutor weixinSslRequestExecutor;
 
-    public AbstractService(WeixinConfig weixinConfig, RequestExecutor requestExecutor, WeixinSSLRequestExecutor weixinSslRequestExecutor) {
+    public AbstractService(WeixinConfig weixinConfig, RequestExecutor requestExecutor, RequestExecutor weixinSslRequestExecutor) {
         super(requestExecutor);
         weixinAccount = weixinConfig.getAccount();
         weixinSignature = new WeixinPaymentSignature(weixinAccount.getPaySignKey());

@@ -20,7 +20,6 @@ package com.fanmei.pay4j.api;
 
 import com.fanmei.pay4j.exception.WeixinException;
 import com.fanmei.pay4j.http.RequestExecutor;
-import com.fanmei.pay4j.http.WeixinSSLRequestExecutor;
 import com.fanmei.pay4j.http.response.FanmeiResponse;
 import com.fanmei.pay4j.weixin.config.WeixinConfig;
 import com.fanmei.pay4j.weixin.domain.CommonResult;
@@ -51,7 +50,13 @@ public class WeixinPayProxy {
      */
     private final PayService payService;
 
-    public WeixinPayProxy(@Nonnull WeixinConfig weixinConfig, @Nonnull RequestExecutor requestExecutor, @Nonnull WeixinSSLRequestExecutor weixinSSLRequestExecutor) {
+    /**
+     *
+     * @param weixinConfig 微信的配置
+     * @param requestExecutor 底层https的执行器
+     * @param weixinSSLRequestExecutor 底层https的执行器(双向证书配置)
+     */
+    public WeixinPayProxy(@Nonnull WeixinConfig weixinConfig, @Nonnull RequestExecutor requestExecutor, @Nonnull RequestExecutor weixinSSLRequestExecutor) {
         this.payService = new PayService(weixinConfig, requestExecutor, weixinSSLRequestExecutor);
     }
 

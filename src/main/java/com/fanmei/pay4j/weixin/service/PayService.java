@@ -21,7 +21,6 @@ package com.fanmei.pay4j.weixin.service;
 import com.fanmei.pay4j.common.Constants;
 import com.fanmei.pay4j.exception.WeixinException;
 import com.fanmei.pay4j.http.RequestExecutor;
-import com.fanmei.pay4j.http.WeixinSSLRequestExecutor;
 import com.fanmei.pay4j.http.response.FanmeiResponse;
 import com.fanmei.pay4j.util.RandomUtil;
 import com.fanmei.pay4j.weixin.config.WeixinConfig;
@@ -46,7 +45,7 @@ import static com.fanmei.pay4j.common.Constants.*;
  */
 public class PayService extends AbstractService {
 
-    public PayService(WeixinConfig weixinConfig, RequestExecutor requestExecutor, WeixinSSLRequestExecutor weixinSSLRequestExecutor) {
+    public PayService(WeixinConfig weixinConfig, RequestExecutor requestExecutor, RequestExecutor weixinSSLRequestExecutor) {
         super(weixinConfig, requestExecutor, weixinSSLRequestExecutor);
     }
 
