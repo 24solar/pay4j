@@ -20,6 +20,7 @@ package com.fanmei.pay4j.http;
 
 import com.alibaba.fastjson.JSON;
 import com.fanmei.pay4j.exception.RequestException;
+import com.fanmei.pay4j.http.response.DefaultFanmeiResponse;
 import com.fanmei.pay4j.http.response.FanmeiResponse;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
@@ -180,7 +181,7 @@ public class DefaultRequestExecutor implements RequestExecutor {
     private FanmeiResponse genFanmeiResponse(Charset charset, CloseableHttpResponse response) throws RequestException {
         int status = response.getStatusLine().getStatusCode();
         if (status >= 200 && status < 300) {
-            return FanmeiResponse.of(response, charset);
+            return new DefaultFanmeiResponse(response, charset);
         } else {
             throw RequestException.of(status, JSON.toJSONString(response));
         }
