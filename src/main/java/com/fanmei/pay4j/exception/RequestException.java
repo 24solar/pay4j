@@ -80,11 +80,11 @@ public class RequestException extends RuntimeException {
 
     @Override
     public String getMessage() {
-        if (Strings.isNullOrEmpty(code)) {
+        if (!Strings.isNullOrEmpty(code)) {
             StringBuilder buf = new StringBuilder();
             buf.append(code).append(" >> ").append(desc);
             String text = getErrorText();
-            if (Strings.isNullOrEmpty(text)) {
+            if (!Strings.isNullOrEmpty(text)) {
                 buf.append(" >> ").append(text);
             }
             return buf.toString();

@@ -6,7 +6,7 @@
 
     <groupId>com.fanmei</groupId>
     <artifactId>pay4j</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <name>pay4j</name>
     <description>支付宝、微信支付库</description>
     <url>https://github.com/24solar/pay4j</url>

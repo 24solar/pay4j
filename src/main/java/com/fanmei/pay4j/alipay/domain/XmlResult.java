@@ -33,7 +33,8 @@ import java.io.Serializable;
 public class XmlResult implements Serializable {
 
     private static final long serialVersionUID = -6185313616955051150L;
-
+    //重复的批次号
+    private static final String DUPLICATE_BATCH_NO = "DUPLICATE_BATCH_NO";
     private static final String T = "T";
     @XmlElement(name = "is_success")
     private String isSuccess;
@@ -59,5 +60,9 @@ public class XmlResult implements Serializable {
 
     public boolean succ() {
         return T.equalsIgnoreCase(isSuccess);
+    }
+
+    public boolean batchNoExist() {
+        return !succ() && DUPLICATE_BATCH_NO.equalsIgnoreCase(error);
     }
 }
